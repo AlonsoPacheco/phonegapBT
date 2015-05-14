@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<widget 	xmlns  		= "http://www.w3.org/ns/widgets"
+				xmlns:gap 	= "http://phonegap.com/ns/1.0"
+				id 				= "test.dispositivo"
+				versionCode = "1"
+				version   		= "1.0.0">
+
+    <name>Aplicacion BT</name>
+
+    <description>
+        Aplicacion de muestra con una tabla de bootstrap
+    </description>
+
+    <author href="http://alonso.azurewebsites.net" email="alonso.pacheco@outlook.es">
+        Alonso Test
+    </author>
+	 <preference  name="orientation" value= "portrait" /> 
+	</widget>

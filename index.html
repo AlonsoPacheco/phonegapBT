@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!--<link rel="stylesheet" href="index.css" /> -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/geminis.css" />
+    <link rel="stylesheet" href="css/bootstrap-table.css" />
+
+</head>
+
+<body onload=”init()”>
+
+    <div class="page-container">
+        <div class="page-content" style="padding-left: 3px;">
+            <h3>Aplicación de Prueba</h3>
+            <div class="container" style="height: 100%">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table id="tbl_mensajes"></table>
+                    </div>
+                </div>
+                <!--     <div class="col-md-12 col-xs-12">
+                    <div class="table-responsive">
+                        <table id="tbl_mensajes" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Mensaje</th>
+                                    <th>Leido</th>
+                                    <th>Profesor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!--<table id="tbl_mensajes" class="table">
+        <thead>
+            <tr>
+                <th>Mensaje</th>
+                <th>Leido</th>
+                <th>Profesor</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>-->
+</body>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/bootstrap-table.js"></script>
+<script type="text/javascript">
+    function cargarBT() {
+        var params = new Object();
+        params.id_entare = '8';
+        params.id_ambien = '286';
+        params = JSON.stringify(params);
+        var oEvaluacion = {
+            type: "POST",
+            //url: '../wservicios/Pedidos_Ayuda.asmx/Cargar_Mensajes_Filtro',
+            url: 'https://academico.isur.edu.pe/ISurSoporteClase0/wservicios/Pedidos_Ayuda.asmx/Cargar_Mensajes_Filtro',
+            data: params,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text json",
+            jsonp: "$callback",
+            async: false,
+            success: function(result) {
+                var r = result.d;
+                r = r.Resultado;
+                $('#tbl_mensajes').bootstrapTable('destroy');
+                $('#tbl_mensajes').bootstrapTable({
+                    method: 'post',
+                    data: r,
+                    cache: false,
+                    height: 400,
+                    striped: true,
+                    pagination: true,
+                    pageSize: 50,
+                    pageList: [0, 2, 25, 50, 100, 200],
+                    //toolbarContent: '#listado_toolbar',
+                    toolbarCssBtn: 'btn btn-default btn-xs',
+                    search: true,
+                    searchCssBtn: 'input-xs',
+                    showColumns: true,
+                    showRefresh: false,
+                    minimumCountColumns: 2,
+                    clickToSelect: true,
+                    columns: [{
+                        checkbox: true
+                    }, {
+                        field: 'Mensaje',
+                        title: 'Mensajes',
+                        align: 'center',
+                        valign: 'bottom',
+                        sortable: true
+                    }, {
+                        field: 'Leido',
+                        title: 'Leido',
+                        align: 'center',
+                        valign: 'bottom',
+                        sortable: true
+                    }, {
+                        field: 'Razon_Social',
+                        title: 'Nombre',
+                        align: 'center',
+                        valign: 'bottom',
+                        sortable: true
+                    }]
+                });
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus + ": " + XMLHttpRequest.responseText);
+            }
+        };
+        $.ajax(oEvaluacion);
+    }
+
+    function Cargar() {
+        var params = new Object();
+        params.id_entare = '8';
+        params.id_ambien = '286';
+        params = JSON.stringify(params);
+        var oEvaluacion = {
+            type: "POST",
+            //url: '../wservicios/Pedidos_Ayuda.asmx/Cargar_Mensajes_Filtro',
+            url: 'https://academico.isur.edu.pe/ISurSoporteClase0/wservicios/Pedidos_Ayuda.asmx/Cargar_Mensajes_Filtro',
+            data: params,
+            contentType: "application/json; charset=utf-8",
+            dataType: "text json",
+            async: false,
+            success: function(result) {
+                var r = result.d;
+                if (r.Mensajes.length == 0) {
+                    r = r.Resultado;
+                    $('#tbl_mensajes tbody').empty();
+                    var cadena = "";
+                    for (var i = 0; i < r.length; i++) {
+                        cadena += '<tr>';
+                        cadena += '<td>' + r[i].Mensaje + '</td>';
+                        cadena += '<td>' + r[i].Leido + '</td>';
+                        cadena += '<td>' + r[i].Razon_Social + '</td>';
+                        cadena += '</tr>';
+                    }
+                    $('#tbl_mensajes tbody').html(cadena);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(textStatus + ": " + XMLHttpRequest.responseText);
+            }
+        };
+        $.ajax(oEvaluacion);
+    }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        cargarBT();
+    });
+</script>
+
+</html>

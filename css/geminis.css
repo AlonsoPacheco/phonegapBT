@@ -1,0 +1,84 @@
+﻿@charset "UTF-8";
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&amp;subset=latin,cyrillic-ext);*/
+@import "jquery/jquery-ui-1.latest.min.css";
+@import "bootstrap/bootstrap.min.css";
+@import "fontawesome/font-awesome.min.css";
+@import "mcustomscrollbar/jquery.mCustomScrollbar.css";
+/*@import "select2/select2.css";
+@import "icheck/flat.css";
+@import "summernote/summernote.css";
+@import "codemirror/codemirror.css";
+@import "bootstrap-editable/bootstrap-editable.css";
+@import "rickshaw/rickshaw.css";
+@import "fancybox/jquery.fancybox.css";
+@import "fullcalendar/fullcalendar.css";
+@import "dropzone/dropzone.css";
+@import "mystyles.css";*/
+
+@import "geminis-base.css";
+@import "geminis-content.css";
+@import "geminis-nav-menu.css";
+@import "geminis-media.css";
+
+
+.mCSB_inside > .mCSB_scrollTools {width: 8px;} 
+.mCSB_inside > .mCSB_container {    margin-right: auto;}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {    background-color: rgba(225, 188, 89, 0.85);}
+
+
+.informer{	background:#334454;	border:3px solid #2f9fe0;	border-radius:50%;	color:#FFF;	font-size:10px;	height:20px;	line-height:14px;	moz-border-radius:50%;	position:absolute;	right:0px;	text-align:center;	top:0px;	webkit-border-radius:50%;	width:20px;}
+.informer.informer-pulsate{	animation:pulsate 1s ease-out;	animation-iteration-count:infinite;	moz-animation:pulsate 1s ease-out;	moz-animation-iteration-count:infinite;	opacity:0.0;	webkit-animation:pulsate 1s ease-out;	webkit-animation-iteration-count:infinite;}
+.informer.informer-success{	border-color:#8cc152;}
+.informer.informer-warning{	border-color:#f6bb42;}
+.informer.informer-danger{	border-color:#da4453;}
+.informer.informer-info{	border-color:#4fc1e9;}
+
+.notes{	float:left;	margin-bottom:10px;	position:relative;	width:100%;}
+.notes .notes-item{	background:#293744;	cursor:default;	float:left;	padding-bottom:2px;	position:relative;	width:100%;}
+.notes .notes-item .notes-item-num{	color:#CCC;	float:left;	font-size:21px;	font-weight:300;	height:40px;	line-height:30px;	padding:5px 0px 5px 10px;	width:30px;}
+.notes .notes-item .notes-item-text{	background:#334454;	padding:8px 0px;	padding-left:50px;}
+.notes .notes-item .notes-item-text p{	color:#AAA;	font-size:10px;	line-height:12px;	margin:0px;}
+.notes .notes-item .notes-item-text p:first-child{	color:#DDD;	text-transform:uppercase;}
+.notes .notes-item .notes-item-remove{	color:#5a7793;	position:absolute;	right:5px;	top:10px;}
+.notes .notes-item:hover .notes-item-num,
+.notes .notes-item:hover .notes-item-text p,
+.notes .notes-item:hover .notes-item-remove{	color:#FFF;	moz-transition:color 200ms ease-in;	transition:color 200ms ease-in;	webkit-transition:color 200ms ease-in;}
+.notes .notes-item-progress{	background:linear-gradient(left, #da4453 0%, #f6bb42 50%, #8cc152 100%);	background:-moz-linear-gradient(left, #da4453 0%, #f6bb42 50%, #8cc152 100%);	background:-ms-linear-gradient(left, #da4453 0%, #f6bb42 50%, #8cc152 100%);	background:-o-linear-gradient(left, #da4453 0%, #f6bb42 50%, #8cc152 100%);	background:-webkit-gradient(linear, left top, right top, color-stop(0, #da4453), color-stop(0.5, #f6bb42), color-stop(1, #8cc152));	background:-webkit-linear-gradient(left, #da4453 0%, #f6bb42 50%, #8cc152 100%);	border-radius:1px;	bottom:0px;	height:2px;	left:0px;	moz-border-radius:1px;	position:absolute;	webkit-border-radius:1px;}
+
+@-webkit-keyframes fadein {from {opacity: 0;} to {opacity: 1;}}
+@-moz-keyframes fadein {from {opacity: 0;}to {opacity: 1;}}
+@keyframes fadein {from {opacity: 0;}to {opacity: 1;}}
+@-webkit-keyframes pulsate {0% {-webkit-transform: scale(0.9, 0.9);opacity: 0.0;} 50% {opacity: 1.0;} 100% {-webkit-transform: scale(1.1, 1.1);opacity: 0.0;}}
+@-moz-keyframes pulsate {0% {-moz-transform: scale(0.9, 0.9);opacity: 0.0;} 50% {opacity: 1.0;} 100% {-moz-transform: scale(1.1, 1.1);opacity: 0.0;}}
+@keyframes pulsate { 0% {transform: scale(0.9, 0.9);	opacity: 0.0;} 50% {opacity: 1.0;} 100% {transform: scale(1.1, 1.1);opacity: 0.0;}}
+
+
+.padding-l-05 {padding-left: 5px!important;}
+.padding-r-05 {padding-right: 5px!important;}
+.padding-lr-05 {padding-left: 5px!important;padding-right: 5px!important;}
+
+
+.page-content-toolbar { background-color: #dbdbdb !important;    
+	background: #e3effc; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UzZWZmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYmRiZGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #e3effc 0%, #dbdbdb 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e3effc), color-stop(100%,#dbdbdb)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e3effc 0%,#dbdbdb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e3effc 0%,#dbdbdb 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e3effc 0%,#dbdbdb 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e3effc 0%,#dbdbdb 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3effc', endColorstr='#dbdbdb',GradientType=0 ); /* IE6-8 */
+
+	display: inline-table;    padding: 3px;    width: 100%;}
+.page-content-toolbar .dropdown-menu { font-size: inherit;}
+.page-content-toolbar .btn-group-xs > .btn {border-radius: 3px;line-height: 1.5;padding: 2px 7px;font-size: inherit;}
+.page-content-toolbar .btn-group-xs > .btn i{font-size: 14px;}
+.self-input-group-xs > .form-control,
+.self-input-group-xs > .input-group-btn > .btn  {padding: 2px 7px!important;  font-size: inherit; line-height: 1.5;height:inherit; }
+.self-input-group-xs > .input-group-btn > .btn  {font-size: 11px;}
+
+.panel-page { display: none;}
+.panel-page.active { display: inline;}
+
+.panel-page .subtitle { font-weight: bold; font-variant: small-caps; margin-top: 3px;line-height: 1.5; font-size: 12px;}
